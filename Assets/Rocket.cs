@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -26,15 +27,16 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rigidbody.AddRelativeForce(Vector3.up);
-// AddRelativeForce(Vector3.up);
         }
         if (Input.GetKey(KeyCode.A))
         {
             print("LeftPressed");
+            transform.Rotate(Vector3.forward);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             print("RightPressed");
+            transform.Rotate(-Vector3.forward);
         }
     }
 }
